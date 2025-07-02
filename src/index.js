@@ -7,6 +7,9 @@ import ProductList from "./pages/ProductList";
 import InventoryList from "./pages/InventoryList";
 import CustomerList from "./pages/CustomerList";
 import CustomerForm from "./pages/CustomerForm";
+import OrderList from "./pages/OrderList";
+import Createorder from "./pages/Createorder";
+import OrderDetail from "./pages/OrderDetail";
 
 
 const router = createBrowserRouter([
@@ -21,7 +24,10 @@ const router = createBrowserRouter([
       {path:"inventory",Component:InventoryList},
       {path:"/customers", Component:CustomerList},
       {path:"/customers/new",Component:CustomerForm},
-      {path:"/customers/edit/:id",Component:CustomerForm}
+      {path:"/customers/edit/:id",Component:CustomerForm},
+      {path:"/orders",Component:OrderList},
+      {path:"/orders/new",Component:Createorder},
+      {path:"/orders/:id",Component:OrderDetail}
     ],
   },
 ]);

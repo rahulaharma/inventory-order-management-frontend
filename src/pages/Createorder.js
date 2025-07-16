@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { api } from "../services/api";
 import { TrashIcon,PlusIcon } from "@heroicons/react/16/solid";
@@ -35,7 +35,7 @@ const Createorder=()=>{
             }
     }
 
-    const handleAdditem=async()=>{
+    const handleAddItem=async()=>{
         if(!selectedProductId || quantity<=0){
             toast.warn('Please select a product and enter a valid quantity.')
             return;
@@ -84,7 +84,7 @@ const Createorder=()=>{
             customer:{
                 id:selectedCustomerId
             },
-            salesperson:{
+            salesPerson:{
                 id:selectedUserId
             },
             status:'NEW',
@@ -105,8 +105,8 @@ const Createorder=()=>{
     }
 
     return(
-        <div className="container mx-auto space-y-6">
-            <h1 className="text-3xl font-bold text-gray-800">Create New Order</h1>
+        <div className="h-[calc(100vh-4rem)] overflow-y-auto px-4 py-6">
+            <h1 className="text-3xl font-bold text-gray-800 pb-1.5">Create New Order</h1>
              <div className="bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-xl font-semibold mb-4">Order Details</h2>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

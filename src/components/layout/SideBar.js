@@ -1,5 +1,5 @@
 import {HomeIcon,CubeIcon,UsersIcon,ShoppingCartIcon,ArchiveBoxIcon } from "@heroicons/react/16/solid";
-import { NavLink } from "react-router"; 
+import { NavLink } from "react-router-dom"; 
 
 const navigation=[
     {name:'DashBoard',to:'/',icon:HomeIcon},

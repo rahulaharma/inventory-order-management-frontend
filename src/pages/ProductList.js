@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import {PlusIcon, PencilIcon, TrashIcon} from "@heroicons/react/16/solid"
 

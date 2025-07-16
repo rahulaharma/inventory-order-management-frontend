@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { useParams,Link,useNavigate } from "react-router";
+import { useParams,Link,useNavigate } from "react-router-dom";
 import { api } from "../services/api";
 import { toast } from "react-toastify";
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";

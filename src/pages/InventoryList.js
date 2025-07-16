@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { api } from "../services/api";
 import { PlusIcon,ArrowPathIcon } from "@heroicons/react/16/solid";
 import { toast } from "react-toastify";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const InventoryList=()=>{
     const [items,setItems]=useState([])

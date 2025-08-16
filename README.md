@@ -3,6 +3,11 @@
 This is the frontend for a comprehensive Inventory and Order Management System, built with a modern, high-performance tech stack including React 19, React Router v7, and Tailwind CSS v4.
 
 The application provides a user-friendly interface for managing products, inventory levels, customers, and sales orders. It features role-based access control to ensure that staff members can only access the features relevant to their roles.
+
+You can access backend for the same here 
+```bash
+https://github.com/rahulaharma/inventory-and-order-management-system
+```
 ---
 
 ## ✨ Key Features

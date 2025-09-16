@@ -1,3 +1,5 @@
+import "./index.css"
+import React from "react";
 import App from "./App"
 import ReactDOM from "react-dom/client"
 import {createBrowserRouter,RouterProvider} from "react-router-dom";
@@ -14,6 +16,8 @@ import { ToastContainer } from "react-toastify";
 import AuthProvider from "./pages/AuthProvider";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import RoleBasedRoute from "./pages/RoleBasedRoute";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
 
@@ -45,11 +49,11 @@ const router = createBrowserRouter([
       
       {
         path: 'orders',
-        element: <RoleBasedRoute allowedRoles={['SALES_STAFF']} />,
+        element: <RoleBasedRoute allowedRoles={['SALESSTAFF']} />,
         children: [
-          {index: true, element:<OrderList/>},
-          {path:'new', element:<Createorder/>},
-          {path:':id', element:<OrderDetail/>},
+          {index:true,element:<OrderList/>},
+          {path:'new',element:<Createorder/>},
+          {path:':id',element:<OrderDetail/>},
         ],
       },
     ],

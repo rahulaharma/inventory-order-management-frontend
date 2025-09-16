@@ -9,7 +9,7 @@ const Login=()=>{
 
     const navigate=useNavigate()
     const {login}=useAuth()
-    const [userName,setUserName]=useState('')
+    const [username,setUsername]=useState('')
     const [password,setPassword]=useState('')
     const [loading,setLoading]=useState(false)
 
@@ -18,7 +18,7 @@ const Login=()=>{
         setLoading(true)
 
         try{
-            const {data}=await api.post("/login",{userName,password})
+            const {data}=await api.post("/login",{username,password})
             const {token}=data
             login(token)
             navigate('/',{replace:true})
@@ -39,7 +39,7 @@ const Login=()=>{
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                          <label className="block text-sm font-medium text-gray-700">Username</label>
-                         <input type="text" value={userName} onChange={event => setUserName(event.target.value)} required className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
+                         <input type="text" value={username} onChange={event => setUsername(event.target.value)} required className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"/>
                     </div>
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Password</label>

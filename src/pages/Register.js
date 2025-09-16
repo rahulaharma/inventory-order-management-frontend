@@ -23,7 +23,7 @@ const Register=()=>{
         }
 
         try{
-            await api.post('api/register',registerationPayLoad)
+            await api.post('/register',registerationPayLoad)
             toast.success("Registration successful! Please log in.")
             navigate('/login')
         }
@@ -68,7 +68,7 @@ const Register=()=>{
 
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="password" value={password} onChange={(event)=>setPassword(e.target.value)} required className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                        <input type="password" value={password} onChange={(event)=>setPassword(event.target.value)} required className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                     </div>
                     <button type="submit" disabled={loading} className="w-full py-3 font-semibold text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:bg-indigo-400">
                         {loading ? 'Registering...' : 'Get Started'}

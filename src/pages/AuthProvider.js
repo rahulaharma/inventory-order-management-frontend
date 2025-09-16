@@ -6,12 +6,21 @@ const AuthProvider=({children})=>{
     const [user,setUser]=useState(()=>{
         const token=localStorage.getItem('token')
         if(token){
-            const decodedToken=jwtDecode(token)
+            try{
+                const decodedToken=jwtDecode(token)
+                if (decodedToken.exp *1000<Date.now()) {
+                    localStorage.removeItem('token');
+                    return null;
+                }
+            
             return {role:decodedToken.role}
+            }
+             catch (error) {
+                localStorage.removeItem('token');
+                return null;
+            }
         }
-        else{
-            return null
-        }
+        return null;
     })
 
     const login=(token)=>{

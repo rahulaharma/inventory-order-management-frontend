@@ -26,6 +26,7 @@ const AuthProvider=({children})=>{
     const login=(token)=>{
         localStorage.setItem('token',token)
         const decodedToken = jwtDecode(token);
+        console.log("Decoded Token:", decodedToken);
         setUser({role: decodedToken.role});
     }
 

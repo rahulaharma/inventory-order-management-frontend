@@ -1,9 +1,8 @@
 import Header from "./Header";
 import SideBar from "./SideBar"
 
-const LayOut=({children})=>{
-    console.log("ejoiee")
-    console.log(children)
+const Layout=({children})=>{
+  console.log(children)
     return(
         <>
             <div className="flex h-screen bg-blue-100">
@@ -17,4 +16,4 @@ const LayOut=({children})=>{
         </>
     )
 }
-export default LayOut
+export default Layout

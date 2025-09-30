@@ -27,8 +27,12 @@ const InventoryList=()=>{
     }
     const reStockItem=async(item)=>{
         try{
-            await api.put(item.id,{quantityAvailable:item.quantityAvailable+1})
-            toast.success("Successfully updated!")
+            const newQuantity = item.quantityAvailable + 1;
+            await api.put(`/inventory/product/${item.product.id}`, newQuantity, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+            toast.success("Successfully updated!");
+            fetchInventory(); 
         }
         catch(error){
             toast.error("Failed to update inventory")

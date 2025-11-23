@@ -13,7 +13,7 @@ const AuthProvider=({children})=>{
                     return null;
                 }
             
-            return {role:decodedToken.role}
+            return {role:decodedToken.role,id:decodedToken.userId}
             }
              catch (error) {
                 localStorage.removeItem('token');
@@ -27,7 +27,7 @@ const AuthProvider=({children})=>{
         localStorage.setItem('token',token)
         const decodedToken = jwtDecode(token);
         console.log("Decoded Token:", decodedToken);
-        setUser({role: decodedToken.role});
+        setUser({role: decodedToken.role,id:decodedToken.userId});
     }
 
     const logout=()=>{

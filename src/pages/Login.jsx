@@ -18,7 +18,7 @@ const Login=()=>{
         setLoading(true)
 
         try{
-            const {data}=await api.post("/login",{username,password})
+            const {data}=await api.post("users/login",{username,password})
             const {token}=data
             login(token)
             navigate('/',{replace:true})

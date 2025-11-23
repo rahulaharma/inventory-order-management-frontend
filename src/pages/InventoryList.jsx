@@ -47,31 +47,38 @@ const InventoryList=()=>{
     }
     return(
         <div className="space-y-6">
-            <div className="flex justify-between items-center">
-                <h1 className="text-2xl font-bold">Inventory</h1>
-                <Link to="/products/new"className="bg-indigo-600 text-white px-3 py-2 rounded flex items-center">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Inventory</p>
+                    <h1 className="text-3xl font-black text-slate-900">Stock levels</h1>
+                </div>
+                <Link
+                    to="/products/new"
+                    className="inline-flex items-center rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:from-indigo-600 hover:to-indigo-700"
+                >
                     <PlusIcon className="h-5 w-5 mr-1" />
-                        Add Product
+                    Add Product
                 </Link>
              </div>
-            <table className="min-w-full bg-white shadow rounded">
-                <thead className="bg-gray-50 text-left">
+            <div className="overflow-hidden rounded-3xl border border-white/60 bg-white/95 shadow-2xl">
+            <table className="min-w-full text-left text-slate-700">
+                <thead className="bg-slate-100/90 text-xs font-semibold uppercase tracking-wide text-slate-500">
                     <tr>
-                        <th className="p-3">Product</th>
-                        <th className="p-3">SKU</th>
-                        <th className="p-3">Quantity</th>
-                        <th className="p-3 text-right">Actions</th>
+                        <th className="px-6 py-3">Product</th>
+                        <th className="px-6 py-3">SKU</th>
+                        <th className="px-6 py-3">Quantity</th>
+                        <th className="px-6 py-3 text-right">Actions</th>
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="divide-y divide-slate-100 text-base font-medium text-slate-800">
                     {items.map((item)=>(
-                        <tr key={item.id} className="border-t">
-                            <td className="p-3">{item.product.name}</td>
-                            <td className="p-3">{item.product.sku}</td>
-                            <td className="p-3">{item.quantityAvailable}</td>
-                            <td className="p-3 text-right">
-                                <button onClick={() =>reStockItem(item)}className="inline-flex items-center px-2 py-1 text-xs bg-green-600 text-white rounded hover:bg-green-700">
+                        <tr key={item.id} className="transition hover:bg-slate-50/80">
+                            <td className="px-6 py-4 text-slate-900">{item.product.name}</td>
+                            <td className="px-6 py-4 text-slate-600">{item.product.sku}</td>
+                            <td className="px-6 py-4 text-slate-900">{item.quantityAvailable}</td>
+                            <td className="px-6 py-4 text-right">
+                                <button onClick={() =>reStockItem(item)}className="inline-flex items-center gap-2 rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-400">
                                     <ArrowPathIcon className="h-4 w-4 mr-1" />
                                     Restock
                                 </button>
@@ -80,6 +87,7 @@ const InventoryList=()=>{
                     ))}
                 </tbody>
             </table>
+            </div>
         </div>
     )
 }

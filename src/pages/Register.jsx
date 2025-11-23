@@ -23,7 +23,7 @@ const Register=()=>{
         }
 
         try{
-            await api.post('/register',registerationPayLoad)
+            await api.post('users/register',registerationPayLoad)
             toast.success("Registration successful! Please log in.")
             navigate('/login')
         }

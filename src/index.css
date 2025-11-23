@@ -1,1 +1,69 @@
 @import "tailwindcss";
+
+@layer base {
+  :root {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+    background-color: #020617;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.4), transparent 45%),
+      radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.35), transparent 35%),
+      #020617;
+    color: inherit;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background: rgba(99, 102, 241, 0.4);
+    color: #0f172a;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6366f1, #a855f7);
+    border-radius: 999px;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply relative overflow-hidden rounded-2xl border border-white/40 bg-white/90 px-6 py-5 shadow-xl backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl;
+  }
+
+  .stat-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(99, 102, 241, 0.1), rgba(236, 72, 153, 0.08));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .stat-card:hover::after {
+    opacity: 1;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-200 transition-all duration-200 hover:bg-white/15 hover:text-white;
+  }
+
+  .sidebar-link-active {
+    @apply bg-white text-slate-900 shadow-lg;
+  }
+}
